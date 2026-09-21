@@ -1,0 +1,6 @@
+{
+  "name": "Banjo em até 30 dias",
+  "description": "Tenha +1.000 acordes de Cavaquinho e Banjo reunidos em um único dicionário, organizado para você encontrar o acorde que precisa em segundos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

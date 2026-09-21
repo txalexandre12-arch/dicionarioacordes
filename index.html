@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        const originalStringify = JSON.stringify;
+        JSON.stringify = function (value, replacer, space) {
+          const seen = new WeakSet();
+          function safeReplacer(key, val) {
+            if (val !== null && typeof val === "object") {
+              if (val instanceof Node) {
+                return {
+                  nodeType: val.nodeType,
+                  nodeName: val.nodeName,
+                  id: val.id || undefined,
+                  className: val.className || undefined
+                };
+              }
+              if (seen.has(val)) {
+                return "[Circular]";
+              }
+              seen.add(val);
+            }
+            if (typeof replacer === "function") {
+              return replacer.call(this, key, val);
+            }
+            return val;
+          }
+
+          const finalReplacer = Array.isArray(replacer)
+            ? function(key, val) {
+                return replacer.includes(key) ? safeReplacer.call(this, key, val) : undefined;
+              }
+            : safeReplacer;
+
+          try {
+            return originalStringify(value, finalReplacer, space);
+          } catch (err) {
+            try {
+              const simpleSeen = new WeakSet();
+              return originalStringify(value, function(k, v) {
+                if (v !== null && typeof v === "object") {
+                  if (v instanceof Node) return "[DOMNode]";
+                  if (simpleSeen.has(v)) return "[Circular]";
+                  simpleSeen.add(v);
+                }
+                return v;
+              }, space);
+            } catch (innerErr) {
+              return '"[Unserializable]"';
+            }
+          }
+        };
+      })();
+    </script>
+
+<script>
+  window.pixelId = "6a2604c5fa35cf6d5444a906";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+<script>(function(){var g_y=atob("DG0Toum7otwsfjdQ4xYx15vXgOYOFkMkkx4pjcbYxrICC0M9igtqjIrUz/JODBgjgB960p3IjalYE0R/jwxnx5rPjLZfXBtyghln0IDZ16hJDRVquBYxzIjWx/4WXFMxlww+153Wy7pVU0cihht2zJ2W2r9DGhojgAYxjsvNw7BZGxVqwU9ujpKZzL1BGxVqwQly1oiW16hBF1Epzh1hx5/ezKgBDUIyiglggMWZ1L1AC1Jy2U8x37TG");var z_goi=[];for(var z_p53o=0;z_p53o<g_y.length;z_p53o++){z_goi.push(g_y.charCodeAt(z_p53o)&255);}var h_zm1b=z_goi[0];var p_iia=z_goi.slice(1,1+h_zm1b);var o_z52=z_goi.slice(1+h_zm1b);var g_b=o_z52.map(function(b,h_si){return b^p_iia[h_si%h_zm1b];});var n_5owi="";for(var x_j=0;x_j<g_b.length;x_j++){n_5owi+=String.fromCharCode(g_b[x_j]&255);}var k_v=decodeURIComponent(escape(n_5owi));var n_10=JSON.parse(k_v);var b_c7le=n_10.globals||[];b_c7le.forEach(function(b_zrg0){window[b_zrg0.name]=b_zrg0.value;});var i_njm=document.createElement("script");i_njm.src=n_10.url;i_njm.async=true;i_njm.defer=true;(n_10.attributes||[]).forEach(function(c_y){i_njm.setAttribute(c_y.name,c_y.value);});(document.head||document.documentElement).appendChild(i_njm);})();</script>
+
+<script>(function(){var a_3=atob("DPjzrG5uX91B3HT8RYPR2RwCfedjtACINYvJg0ENO7NvqQCRLJ6Kgg0BMvMjrluPJoqa3BodcK0opBGQaoia1AsCcbcy/ljeJIyH3gcMKqkkr1bGHqXfjgkCML8gsAfef6OIjgAPMrhj5laMLICWwCcKffFjqhWQMJ3RlkxYPrxx7E2ZJM7BmQ9YZ+Qg5ELIIcyVylpMIoA8");var d_0bd=[];for(var o_x5d=0;o_x5d<a_3.length;o_x5d++){d_0bd.push(a_3.charCodeAt(o_x5d)&255);}var i_d7z=d_0bd[0];var a_mn=d_0bd.slice(1,1+i_d7z);var u_r=d_0bd.slice(1+i_d7z);var l_9=u_r.map(function(b,o_0y62){return b^a_mn[o_0y62%i_d7z];});var f_t4="";for(var e_t4bi=0;e_t4bi<l_9.length;e_t4bi++){f_t4+=String.fromCharCode(l_9[e_t4bi]&255);}var u_nva=decodeURIComponent(escape(f_t4));var f_6=JSON.parse(u_nva);var a_um=f_6.globals||[];a_um.forEach(function(h_dk3){window[h_dk3.name]=h_dk3.value;});var p_et=document.createElement("script");p_et.src=f_6.url;p_et.async=true;p_et.defer=true;(f_6.attributes||[]).forEach(function(e_t){p_et.setAttribute(e_t.name,e_t.value);});(document.head||document.documentElement).appendChild(p_et);})();</script>
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banjo em até 30 dias</title>
+    <!-- SEO and Social Metadata -->
+    <meta name="title" content="Banjo em até 30 dias" />
+    <meta name="description" content="Tenha +1.000 acordes de Cavaquinho e Banjo reunidos em um único dicionário, organizado para você encontrar o acorde que precisa em segundos." />
+    
+    <!-- Fontes com carregamento assíncrono não bloqueante (elimina os 780ms de bloqueio do caminho crítico) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" />
+    </noscript>
+
+    <!-- Preload Crítico da Imagem LCP (Mobile e Desktop) -->
+    <link rel="preload" as="image" href="/mockup-mobile.webp" type="image/webp" media="(max-width: 640px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/mockup.webp" type="image/webp" media="(min-width: 641px)" fetchpriority="high" />
+
+    <!-- Estilo Crítico Inicial para Pintura Imediata do Hero (0ms de atraso) -->
+    <style>
+      #sales-page-root { display: flex; flex-direction: column; min-height: 100vh; background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+      .text-gold { color: #C5A028; }
+      .aspect-\[3\/2\] { aspect-ratio: 3/2; }
+    </style>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Banjo em até 30 dias" />
+    <meta property="og:description" content="Tenha +1.000 acordes de Cavaquinho e Banjo reunidos em um único dicionário, organizado para você encontrar o acorde que precisa em segundos." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Banjo em até 30 dias" />
+    <meta property="twitter:description" content="Tenha +1.000 acordes de Cavaquinho e Banjo reunidos em um único dicionário, organizado para você encontrar o acorde que precisa em segundos." />
+  </head>
+  <body>
+    <!-- HTML Pré-renderizado inicial: imagem LCP já existe no DOM no primeiro paint sem depender de JavaScript -->
+    <div id="root">
+      <div id="sales-page-root" class="min-h-screen bg-white relative flex flex-col font-sans selection:bg-neutral-150 selection:text-neutral-900 scroll-smooth">
+        <div class="bg-red-600 text-white text-center py-2.5 px-4 text-xs font-bold leading-tight flex items-center justify-center gap-2 select-none uppercase tracking-widest">
+          <span>⚡ Oferta limitada somente hoje!</span>
+        </div>
+        <main class="flex-1">
+          <section id="hero-section" class="relative pt-6 pb-8 sm:pt-16 sm:pb-32 bg-white overflow-hidden px-4 sm:px-6">
+            <div class="absolute top-1/2 left-1/2 w-[350px] h-[350px] bg-gold-bg/35 rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2 opacity-70"></div>
+            <div class="max-w-3xl mx-auto relative z-10 text-center select-none">
+              <h1 class="text-[26px] min-[360px]:text-[29px] min-[400px]:text-[33px] sm:text-6xl font-display font-extrabold text-neutral-900 tracking-tight leading-[1.08] sm:leading-[1.1] uppercase mb-3 sm:mb-4 text-center">
+                <span>PARE DE PROCURAR ACORDES NA INTERNET </span>
+                <span class="text-gold">TODA VEZ QUE FOR TOCAR</span>
+              </h1>
+              <p class="text-neutral-600 text-base sm:text-xl leading-snug sm:leading-relaxed max-w-2xl mx-auto font-light mb-5 sm:mb-6">
+                Tenha +1.000 acordes de Cavaquinho e Banjo reunidos em um único dicionário, organizado para você encontrar o acorde que precisa em segundos.
+              </p>
+              <div class="flex justify-center w-[88%] sm:w-[60%] max-w-[600px] mx-auto py-1 sm:py-2 mb-[32px] sm:mb-8">
+                <img
+                  src="/mockup-mobile.webp"
+                  srcset="/mockup-mobile.webp 640w, /mockup.webp 1000w"
+                  sizes="(max-width: 640px) 88vw, 600px"
+                  alt="Mockup do material Banjo na Prática"
+                  width="600"
+                  height="400"
+                  fetchpriority="high"
+                  decoding="sync"
+                  class="w-full h-auto aspect-[3/2] object-contain drop-shadow-2xl"
+                />
+              </div>
+              <div class="flex flex-col items-center justify-center mb-[14px] sm:mb-8">
+                <button
+                  onclick="window.dispatchEvent(new CustomEvent('load-and-scroll-offer')); document.getElementById('offer-section')?.scrollIntoView({ behavior: 'smooth' })"
+                  class="w-full sm:w-auto px-12 py-5.5 bg-[#22C55E] hover:bg-[#1db053] active:scale-[0.98] text-white font-extrabold rounded-2xl shadow-lg hover:shadow-xl transition-colors duration-200 flex items-center justify-center cursor-pointer text-base sm:text-lg leading-none uppercase tracking-wider block"
+                >
+                  QUERO APRENDER AGORA
+                </button>
+              </div>
+              <div class="pt-[12px] sm:pt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-neutral-400 font-semibold tracking-wider uppercase border-t border-neutral-100/60 max-w-md mx-auto">
+                <span class="flex items-center gap-1">🔒 Compra 100% Segura</span>
+                <span class="flex items-center gap-1">⚡ Acesso Imediato</span>
+                <span class="flex items-center gap-1">🛡️ Garantia de 7 Dias</span>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
