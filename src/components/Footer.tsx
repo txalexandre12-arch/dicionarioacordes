@@ -38,7 +38,7 @@ export default function Footer({ onOpenSupport }: FooterProps) {
           </div>
 
           <p className="text-[11px] text-neutral-600 text-center md:text-right">
-            &copy; {new Date().getFullYear()} Banjo em até 30 dias. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Dicionario de Acordes Banjo e Cavaquinho. Todos os direitos reservados.
           </p>
         </div>
 
