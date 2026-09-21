@@ -304,10 +304,10 @@ export default function OfferSection() {
                 </div>
               </div>
 
-              {/* Botão de Compra com link de checkout intacto */}
+              {/* Botão de Compra com link de checkout */}
               <div>
                 <a
-                  href="https://app.zuptos.com.br/checkout/535b80d2dbb7c148"
+                  href="https://app.zuptos.com.br/checkout/18bdb094c8965948"
                   className="w-full py-4 px-4 bg-[#22C55E] hover:bg-[#1db053] active:scale-[0.98] text-white font-extrabold rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer text-xs sm:text-sm uppercase tracking-wider block leading-tight glow-btn"
                 >
                   QUERO O PLANO COMPLETO

@@ -5,9 +5,14 @@ import { motion, AnimatePresence } from "motion/react";
 // =========================================================================
 // LINKS DE CHECKOUT
 // =========================================================================
-export const CHECKOUT_URL_PLANO_COMPLETO_UPGRADE_19 = "https://app.zuptos.com.br/checkout/535b80d2dbb7c148";
-export const CHECKOUT_URL_PLANO_COMPLETO_27 = CHECKOUT_URL_PLANO_COMPLETO_UPGRADE_19;
-export const CHECKOUT_URL_PLANO_SIMPLES_10 = "https://app.zuptos.com.br/checkout/c2bc66213299a0e0";
+export const CHECKOUT_URL_POPUP = "https://app.zuptos.com.br/checkout/7663ba356c155849";
+export const CHECKOUT_URL_PLANO_BASICO = "https://app.zuptos.com.br/checkout/9be508360481649c";
+export const CHECKOUT_URL_PLANO_COMPLETO = "https://app.zuptos.com.br/checkout/18bdb094c8965948";
+
+// Aliases para compatibilidade retroativa
+export const CHECKOUT_URL_PLANO_COMPLETO_UPGRADE_19 = CHECKOUT_URL_POPUP;
+export const CHECKOUT_URL_PLANO_COMPLETO_27 = CHECKOUT_URL_POPUP;
+export const CHECKOUT_URL_PLANO_SIMPLES_10 = CHECKOUT_URL_PLANO_BASICO;
 
 interface SpecialOfferModalProps {
   isOpen: boolean;
@@ -132,7 +137,7 @@ export default function SpecialOfferModal({ isOpen, onClose }: SpecialOfferModal
               <div className="space-y-2 pt-0.5 text-center">
                 {/* BOTÃO PRINCIPAL */}
                 <a
-                  href={CHECKOUT_URL_PLANO_COMPLETO_27}
+                  href={CHECKOUT_URL_POPUP}
                   className="w-full py-3.5 sm:py-4 px-4 bg-[#22C55E] hover:bg-[#1db053] active:scale-[0.98] text-white font-extrabold rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer text-xs sm:text-sm uppercase tracking-wider block leading-tight glow-btn"
                 >
                   SIM! QUERO DESBLOQUEAR +1.000 ACORDES 🔥
@@ -141,7 +146,7 @@ export default function SpecialOfferModal({ isOpen, onClose }: SpecialOfferModal
                 {/* OPÇÃO SECUNDÁRIA */}
                 <div>
                   <a
-                    href={CHECKOUT_URL_PLANO_SIMPLES_10}
+                    href={CHECKOUT_URL_PLANO_BASICO}
                     className="inline-block py-1.5 px-3 text-[11px] sm:text-xs text-neutral-400 hover:text-neutral-600 font-medium underline decoration-neutral-300 hover:decoration-neutral-400 transition-colors leading-snug cursor-pointer"
                   >
                     Não, obrigado. Quero continuar com apenas +300 acordes por R$10
