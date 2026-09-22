@@ -1,5 +1,5 @@
 import React, { useState, Suspense, lazy } from "react";
-import { Check } from "lucide-react";
+import { Check, Music, ShieldCheck, Calendar } from "lucide-react";
 
 const SpecialOfferModal = lazy(() => import("./SpecialOfferModal"));
 
@@ -32,18 +32,27 @@ export default function OfferSection() {
   const completeBonuses = [
     {
       title: "Mapa Completo dos Campos Harmônicos",
-      description: "Entenda tonalidades, graus e relações entre os acordes de forma visual.",
       badge: "BÔNUS",
+      icon: Music,
+      cardClasses: "bg-purple-50/40 border-purple-200/70 hover:border-purple-300",
+      iconClasses: "text-purple-600",
+      badgeClasses: "bg-purple-100/90 border-purple-200/90 text-purple-700",
     },
     {
       title: "Manual de Cuidados com o Banjo",
-      description: "Aprenda os principais cuidados para conservar seu instrumento.",
       badge: "BÔNUS",
+      icon: ShieldCheck,
+      cardClasses: "bg-amber-50/40 border-amber-200/70 hover:border-amber-300",
+      iconClasses: "text-amber-600",
+      badgeClasses: "bg-amber-100/90 border-amber-200/90 text-amber-800",
     },
     {
       title: "Cronograma de 30 Dias",
-      description: "Tenha uma rotina organizada para estudar e evoluir sem ficar perdido.",
       badge: "BÔNUS",
+      icon: Calendar,
+      cardClasses: "bg-blue-50/40 border-blue-200/70 hover:border-blue-300",
+      iconClasses: "text-blue-600",
+      badgeClasses: "bg-blue-100/90 border-blue-200/90 text-blue-700",
     },
   ];
 
@@ -249,25 +258,26 @@ export default function OfferSection() {
                     <p className="text-[11px] font-bold uppercase tracking-wider text-neutral-700">
                       🎁 3 BÔNUS EXCLUSIVOS INCLUSOS:
                     </p>
-                    <div className="space-y-1.5">
-                      {completeBonuses.map((bonus, idx) => (
-                        <div
-                          key={idx}
-                          className="bg-neutral-50/70 border border-neutral-200/70 rounded-xl p-2.5 sm:p-3 text-left transition-colors hover:border-neutral-300"
-                        >
-                          <div className="flex items-center justify-between gap-2">
-                            <span className="text-xs sm:text-[13px] font-bold text-neutral-900 tracking-tight leading-snug">
-                              {bonus.title}
-                            </span>
-                            <span className="shrink-0 inline-block px-1.5 py-0.5 rounded bg-neutral-100 border border-neutral-200 text-neutral-600 text-[8px] sm:text-[9px] font-bold uppercase tracking-wider select-none leading-none">
+                    <div className="space-y-1.5 sm:space-y-2">
+                      {completeBonuses.map((bonus, idx) => {
+                        const Icon = bonus.icon;
+                        return (
+                          <div
+                            key={idx}
+                            className={`border rounded-xl px-2.5 sm:px-3 py-2 sm:py-2.5 text-left transition-colors flex items-center justify-between gap-2 ${bonus.cardClasses}`}
+                          >
+                            <div className="flex items-center gap-2 min-w-0">
+                              <Icon className={`w-3.5 h-3.5 shrink-0 ${bonus.iconClasses}`} />
+                              <span className="text-xs sm:text-[13px] font-bold text-neutral-900 tracking-tight leading-snug">
+                                {bonus.title}
+                              </span>
+                            </div>
+                            <span className={`shrink-0 inline-block px-1.5 py-0.5 rounded border text-[8px] sm:text-[9px] font-bold uppercase tracking-wider select-none leading-none ${bonus.badgeClasses}`}>
                               {bonus.badge}
                             </span>
                           </div>
-                          <p className="text-[11px] text-neutral-500 font-normal leading-relaxed pt-0.5">
-                            {bonus.description}
-                          </p>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
 
