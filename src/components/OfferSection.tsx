@@ -31,19 +31,16 @@ export default function OfferSection() {
 
   const completeBonuses = [
     {
-      icon: "🎼",
       title: "Mapa Completo dos Campos Harmônicos",
       description: "Entenda tonalidades, graus e relações entre os acordes de forma visual.",
       badge: "BÔNUS",
     },
     {
-      icon: "🪕",
       title: "Manual de Cuidados com o Banjo",
       description: "Aprenda os principais cuidados para conservar seu instrumento.",
       badge: "BÔNUS",
     },
     {
-      icon: "📅",
       title: "Cronograma de 30 Dias",
       description: "Tenha uma rotina organizada para estudar e evoluir sem ficar perdido.",
       badge: "BÔNUS",
@@ -249,27 +246,24 @@ export default function OfferSection() {
 
                   {/* Bloco dos 3 Bônus Exclusivos */}
                   <div className="pt-2.5 space-y-2 border-t border-neutral-100">
-                    <p className="text-[11px] font-black uppercase tracking-wider text-amber-700">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-neutral-700">
                       🎁 3 BÔNUS EXCLUSIVOS INCLUSOS:
                     </p>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5">
                       {completeBonuses.map((bonus, idx) => (
                         <div
                           key={idx}
-                          className="bg-amber-50/50 border border-amber-200/70 rounded-xl p-2.5 space-y-0.5 text-left transition-colors hover:border-amber-300"
+                          className="bg-neutral-50/70 border border-neutral-200/70 rounded-xl p-2.5 sm:p-3 text-left transition-colors hover:border-neutral-300"
                         >
-                          <div className="flex items-center justify-between gap-1.5">
-                            <div className="flex items-center gap-1.5 min-w-0">
-                              <span className="text-sm select-none shrink-0">{bonus.icon}</span>
-                              <span className="text-xs sm:text-[13px] font-black text-neutral-900 tracking-tight leading-snug">
-                                {bonus.title}
-                              </span>
-                            </div>
-                            <span className="shrink-0 inline-block px-1.5 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/25 text-amber-900 text-[8px] sm:text-[9px] font-black uppercase tracking-wider select-none leading-none">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-xs sm:text-[13px] font-bold text-neutral-900 tracking-tight leading-snug">
+                              {bonus.title}
+                            </span>
+                            <span className="shrink-0 inline-block px-1.5 py-0.5 rounded bg-neutral-100 border border-neutral-200 text-neutral-600 text-[8px] sm:text-[9px] font-bold uppercase tracking-wider select-none leading-none">
                               {bonus.badge}
                             </span>
                           </div>
-                          <p className="text-[11px] text-neutral-600 font-normal leading-relaxed pl-5">
+                          <p className="text-[11px] text-neutral-500 font-normal leading-relaxed pt-0.5">
                             {bonus.description}
                           </p>
                         </div>
