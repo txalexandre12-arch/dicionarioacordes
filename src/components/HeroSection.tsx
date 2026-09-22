@@ -1,4 +1,5 @@
 import React from "react";
+import WistiaPlayer from "./WistiaPlayer";
 
 export default function HeroSection() {
   return (
@@ -20,20 +21,9 @@ export default function HeroSection() {
           Tenha +1.000 acordes de Cavaquinho e Banjo reunidos em um único dicionário, organizado para você encontrar o acorde que precisa em segundos.
         </p>
 
-        {/* Mockup do material - LCP instantâneo sem delay de decodificação ou animação */}
-        <div className="flex justify-center w-[88%] sm:w-[60%] max-w-[600px] mx-auto py-1 sm:py-2 mb-[32px] sm:mb-8">
-          <img
-            src="/mockup-mobile.webp"
-            srcSet="/mockup-mobile.webp 640w, /mockup.webp 1000w"
-            sizes="(max-width: 640px) 88vw, 600px"
-            alt="Mockup do material Banjo na Prática"
-            width={600}
-            height={400}
-            fetchPriority="high"
-            decoding="sync"
-            className="w-full h-auto aspect-[3/2] object-contain drop-shadow-2xl"
-            referrerPolicy="no-referrer"
-          />
+        {/* Vídeo Wistia Vertical 9:16 */}
+        <div className="py-1 sm:py-2 mb-[32px] sm:mb-8 flex justify-center">
+          <WistiaPlayer mediaId="z98wxws6kb" aspect="0.5625" />
         </div>
 
         {/* Centered CTA - High Contrast Clean Button without side clutter */}

@@ -93,4 +93,12 @@
   transform: translate3d(0, 0, 0);
 }
 
+/* Wistia Player Placeholder / Swatch */
+wistia-player[media-id='z98wxws6kb']:not(:defined) {
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/z98wxws6kb/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 177.78%;
+}
+
 
